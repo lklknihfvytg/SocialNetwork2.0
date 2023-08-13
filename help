@@ -1,0 +1,16 @@
+# register
+http://127.0.0.1:8000/api/v1/auth/users/  # POST
+username, password, email
+# возвращает то же самое (username, password, email)
+
+# login
+http://127.0.0.1:8000/auth/token/login/  # POST
+username, password
+# возвращает auth_token
+
+# logout
+http://127.0.0.1:8000/auth/token/logout/  # POST
+headers 'Token <auth_token>'
+
+
+ко всем запросам, где нужна авторизация, нужно добавить в headers 'Token <auth_token>'
